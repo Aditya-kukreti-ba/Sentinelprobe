@@ -427,11 +427,15 @@ app.post('/api/probe', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`\n  🛡  SentinelProbe`);
-  console.log(`  ─────────────────────────────────`);
-  console.log(`  Running at: http://localhost:${PORT}`);
-  console.log(`  HF Key:     ${HF_KEY ? '✓ Loaded' : '✗ Missing — add to .env'}`);
-  console.log(`  Endpoint:   ${HF_ENDPOINT}`);
-  console.log(`  ─────────────────────────────────\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n  🛡  SentinelProbe`);
+    console.log(`  ─────────────────────────────────`);
+    console.log(`  Running at: http://localhost:${PORT}`);
+    console.log(`  HF Key:     ${HF_KEY ? '✓ Loaded' : '✗ Missing — add to .env'}`);
+    console.log(`  Endpoint:   ${HF_ENDPOINT}`);
+    console.log(`  ─────────────────────────────────\n`);
+  });
+}
+
+module.exports = app;
