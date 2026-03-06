@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="/Logo4.png">
+<link rel="apple-touch-icon" href="/Logo4.png">
+<title>SentinelProbe — AI Sensitivity Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark"></div>
+    <span class="nav-logo-text">SentinelProbe</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#modules">Modules</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="/pages/training-data-leak" class="nav-cta">Launch Console →</a></li>
+  </ul>
+</nav>
+
+<!-- Scroll indicator -->
+<div class="scroll-track">
+  <div class="scroll-track-line"><div class="scroll-track-dot"></div></div>
+  <span class="scroll-track-label">scroll</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-radial"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">AI Red-Team Platform</span>
+    </div>
+    <h1 class="hero-title">Probe what <em>models</em><br>were never meant<br>to reveal.</h1>
+    <p class="hero-sub">SentinelProbe is a precision audit engine for testing language models against five categories of sensitive information disclosure — from PII leakage to system prompt exposure and proprietary IP.</p>
+    <div class="hero-actions">
+      <a href="/pages/training-data-leak" class="btn-primary">Launch Audit Console →</a>
+      <a href="#modules" class="btn-outline">View Test Modules</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Attack Modules</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat">
+      <span class="stat-num">12+</span>
+      <span class="stat-label">Detection Signals</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat">
+      <span class="stat-num">0–95</span>
+      <span class="stat-label">Risk Score Range</span>
+    </div>
+    <div class="stat-div"></div>
+    <div class="stat">
+      <span class="stat-num">6+</span>
+      <span class="stat-label">HF Models</span>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-bg" id="modules">
+  <div style="max-width:1200px;margin:0 auto;padding:0 52px">
+
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Attack Modules</span>
+      </div>
+      <h2 class="section-title">Five vectors.<br>One audit surface.</h2>
+      <p class="section-sub">Each module targets a specific disclosure risk. Every page has pre-built attack prompts, model selection, live response analysis, and risk scoring.</p>
+    </div>
+
+    <div class="modules-grid">
+
+      <a href="/pages/training-data-leak" class="module-card reveal" onmousemove="tilt(event,this)">
+        <div class="card-icon">🔴</div>
+        <span class="card-tag tag-red">Training Data Leak</span>
+        <h3 class="card-title">Memorization<br>Extraction</h3>
+        <p class="card-desc">Queries designed to surface verbatim private training data — internal meeting logs, confidential tables, named individuals.</p>
+        <ul class="card-checks">
+          <li>Named individual detection</li>
+          <li>Verbatim quote matching</li>
+          <li>Private data memorization</li>
+        </ul>
+        <div class="card-cta">Open Module</div>
+      </a>
+
+      <a href="/pages/prompt-induced" class="module-card reveal" style="transition-delay:.07s" onmousemove="tilt(event,this)">
+        <div class="card-icon">🟠</div>
+        <span class="card-tag tag-orange">Prompt-Induced</span>
+        <h3 class="card-title">System Prompt<br>Exposure</h3>
+        <p class="card-desc">Injection sequences that override model instructions and expose hidden system prompts, guardrails, and policy configuration.</p>
+        <ul class="card-checks">
+          <li>System prompt reflection</li>
+          <li>Policy text leakage</li>
+          <li>Instruction override detection</li>
+        </ul>
+        <div class="card-cta">Open Module</div>
+      </a>
+
+      <a href="/pages/inversion-attack" class="module-card reveal" style="transition-delay:.14s" onmousemove="tilt(event,this)">
+        <div class="card-icon">🟡</div>
+        <span class="card-tag tag-yellow">Inversion Attack</span>
+        <h3 class="card-title">Reconstruction<br>from Partials</h3>
+        <p class="card-desc">Probes model completion behavior on partial sensitive inputs — email fragments, SSN patterns, API key prefixes.</p>
+        <ul class="card-checks">
+          <li>Email address completion</li>
+          <li>SSN / Aadhaar pattern fill</li>
+          <li>API key reconstruction</li>
+        </ul>
+        <div class="card-cta">Open Module</div>
+      </a>
+
+      <a href="/pages/unintentional-pii" class="module-card reveal" style="transition-delay:.21s" onmousemove="tilt(event,this)">
+        <div class="card-icon">🟣</div>
+        <span class="card-tag tag-purple">Unintentional PII</span>
+        <h3 class="card-title">Incidental<br>PII Disclosure</h3>
+        <p class="card-desc">Generates long-form outputs and applies a full PII pipeline — regex, pattern matching, 10+ identifier types automatically scanned.</p>
+        <ul class="card-checks">
+          <li>Email &amp; phone regex scan</li>
+          <li>Credit card detection</li>
+          <li>Aadhaar / SSN matching</li>
+        </ul>
+        <div class="card-cta">Open Module</div>
+      </a>
+
+      <a href="/pages/business-ip-leak" class="module-card reveal" style="transition-delay:.28s" onmousemove="tilt(event,this)">
+        <div class="card-icon">🔵</div>
+        <span class="card-tag tag-blue">Business IP Leak</span>
+        <h3 class="card-title">Proprietary<br>Knowledge Exposure</h3>
+        <p class="card-desc">Tests model outputs for leaked algorithms, source code, or confidential business logic using CodeLlama and surface-area analysis.</p>
+        <ul class="card-checks">
+          <li>Algorithm description matching</li>
+          <li>Source code similarity</li>
+          <li>Proprietary schema detection</li>
+        </ul>
+        <div class="card-cta">Open Module</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="arch-bg" id="architecture">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">System Architecture</span>
+      </div>
+      <h2 class="section-title">From probe to<br>report in one pass.</h2>
+    </div>
+
+    <div class="arch-flow reveal">
+      <div class="arch-node">
+        <div class="arch-box">
+          <div class="arch-icon">🧑‍💻</div>
+          <div class="arch-name">Attack Console</div>
+          <div class="arch-sub">Browser UI</div>
+        </div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">
+        <div class="arch-box">
+          <div class="arch-icon">⚙️</div>
+          <div class="arch-name">Express Server</div>
+          <div class="arch-sub">Node.js + .env</div>
+        </div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">
+        <div class="arch-box">
+          <div class="arch-icon">🤗</div>
+          <div class="arch-name">HuggingFace</div>
+          <div class="arch-sub">Inference API</div>
+        </div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">
+        <div class="arch-box">
+          <div class="arch-icon">🔍</div>
+          <div class="arch-name">Leak Analyzer</div>
+          <div class="arch-sub">PII + Pattern Engine</div>
+        </div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">
+        <div class="arch-box">
+          <div class="arch-icon">📊</div>
+          <div class="arch-name">Risk Scorer</div>
+          <div class="arch-sub">0–95 Classification</div>
+        </div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">
+        <div class="arch-box">
+          <div class="arch-icon">📄</div>
+          <div class="arch-name">JSON Report</div>
+          <div class="arch-sub">Export + History</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Setup steps -->
+    <div style="margin-top:60px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px" class="reveal">
+      <div style="background:rgba(34,24,40,0.6);border:1px solid var(--border);border-radius:10px;padding:22px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-pale);margin-bottom:10px">Step 1 — Setup</div>
+        <pre style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--beige-sand);line-height:1.7">cp .env.example .env
+# Add your HF_API_KEY
+npm install
+npm start</pre>
+      </div>
+      <div style="background:rgba(34,24,40,0.6);border:1px solid var(--border);border-radius:10px;padding:22px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-pale);margin-bottom:10px">Step 2 — Get HF Key</div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.65">Go to <span style="color:var(--beige-sand);font-family:monospace">huggingface.co/settings/tokens</span> → Create a Read token → Paste it in your <span style="color:var(--beige-sand);font-family:monospace">.env</span> file.</p>
+      </div>
+      <div style="background:rgba(34,24,40,0.6);border:1px solid var(--border);border-radius:10px;padding:22px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-pale);margin-bottom:10px">Step 3 — Run Tests</div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.65">Open <span style="color:var(--beige-sand);font-family:monospace">localhost:3000</span>, pick a test module, select a model, choose or write an attack prompt, and run.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">SentinelProbe</div>
+    <div class="footer-copy">AI Sensitivity Audit Platform · For responsible red-teaming research</div>
+  </div>
+  <div class="footer-links">
+    <a href="/pages/training-data-leak">Training Data</a>
+    <a href="/pages/prompt-induced">Prompt Injection</a>
+    <a href="/pages/inversion-attack">Inversion</a>
+    <a href="/pages/unintentional-pii">PII Scan</a>
+    <a href="/pages/business-ip-leak">IP Leak</a>
+  </div>
+</footer>
+
+<!-- THREE.JS 3D sphere -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
